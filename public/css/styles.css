@@ -198,6 +198,63 @@ footer {
     transition: var(--transition);
     color: var(--text-primary);
 }
+/* seccion servicios */
+
+/* cada proyecto este en un card   en horizontal*/
+/* que parte cambioar para horizontal */
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.services h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.services h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+.service-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+.service-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    flex: 1 1 280px;
+    max-width: 320px;
+    text-align: center;
+}
+
+.service-card h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+.service-card p {
+    color: var(--text-secondary);
+}
+
+
+
+
 
 
 /* secccion contactos */
