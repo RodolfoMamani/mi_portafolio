@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body class="principal">
+<body>
     <header>
         <div class="container">
             <div class="navbar">
@@ -17,86 +17,174 @@
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#acercade">Acerca de</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#servicios">Mis Proyectos</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
-
+        <!-- <h1>Bienvenido a mi sitio web</h1>   -->
     </header>
     <main>
         <section id="inicio">
             <div class="container person">
                 <div class="person-content">
-                    <h1> Hola, soy Rodolfo Mamani Mamani</h1>
-                    <p> soy un desarrollador software programador universitario </p>
-                    <a href="#contacto" class="btn">Contactame</a>
+                    <spam class="person-badge">Disponible para proyectos</spam>
+                    <h1>Hola, soy <br> <strong>Rodolfo Mamani</strong> </h1>
+                    <p>
+                        Desarrollador de Software Programador Universitario
+                    </p>
+                    <div class="actions">
+                        <a href="#servicios" class="btn btn--primary">Ver proyectos</a>
+                        <a href="#contacto" class="btn btn--secondary">Contáctame</a>
+                    </div>
+                    <aside class="person-img" aria-hidden="true">
+                        <div class="float-card card--a"> React </div>
+                        <div class="float-card card--b"> Node.js </div>
+                        <div class="float-card card--c"> Python </div>
+                        <div class="avatar">
+                            <div class="avatar-interior"> RM </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </section>
         <section id="acercade">
             <div class="container about">
                 <h2>Acerca de mí</h2>
-                <p>Soy un desarrollador software programador universitario con conocimientos en diversas tecnologías.
-                    tengo conocimientos en Nodejs, Python y JavaScript. tambien se ingles basico intermedio</p>
+                <p>
+                    Soy un apasionado desarrollador de software con experiencia en
+                    diversas tecnologías y lenguajes de programación. Me especializo en
+                    el desarrollo de aplicaciones web y móviles, y siempre estoy
+                    buscando aprender nuevas habilidades para mejorar mis proyectos.
+                </p>
+                <div class="skill-grid">
+                    <article class="skill-card skill--backend">
+                        <h3> Backend</h3>
+                        <ul>
+                            <li>Node.js (NestJS, Express)</li>
+                            <li>Python (Django)</li>
+                            <li>PHP (Laravel)</li>
+                        </ul>
 
-                <div class="lenguajes">
-                    <p> Lenguajes de programación: </p>
-                    <br>
-                    <div class="items-l">Nodejs {nestjs, express}</div>
-                    <div class="items-l"> Python (django) </div>
-                    <div class="items-l"> JavaScript </div>
-                    <div class="items-l"> Base de datos {MySQL, PostgreSQL} </div>
+                    </article>
+                    <article class="skill-card skill--frontend">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>React</li>
+                            <li>Angular</li>
+                            <li>Vue.js</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card skill--database">
+                        <h3>Base de datos</h3>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
         <section id="servicios">
-            <div class="services">
-                <h2>Proyectos implementados</h2>
-                <p></p>
-                <div class="service-items">
-                    <div class="service-card">
-                        <h3>Desarrollo de Sistema Web</h3>
-                        <p>Frontend desarrollado con el framework de JavaScript Vue.js, utilizando componentes UI de
-                            Vuetify. Backend implementado con PocketBase (BaaS), utilizando una base de datos no relacional
-                            accesible desde cualquier frontend.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Implementación de Servicio VoIP</h3>
-                        <p>Se implementó un servicio VoIP que permite realizar llamadas en una red local por medio del
-                            protocolo IP. Se utilizó la herramienta Asterisk sobre un sistema operativo Ubuntu­Linux.
-                            Aplicación de conceptos de Protocolos de Comunicación (INF 319).</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Diseño e Implementación de Base de Datos</h3>
-                        <p>Se realizó el diseño conceptual con diagramas entidad­relación (23 entidades) y normalizado hasta
-                            la tercera forma normal. Base de datos implementada en Oracle SGBD, incluyendo funciones y
-                            procedimientos almacenados. Proyecto realizado en el Taller de Base de Datos (INF 272).</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Sistema de Administración de Movilidad</h3>
-                        <p>Proyecto enfocado en el registro y organización de vehículos y sus operadores. Desarrollado con
-                            NetBeans y Java, aplicando conceptos de estructuras de datos, Programación Orientada a Objetos
-                            (POO) y UML. Proyecto de Estructura de Datos (LAB 131).</p>
-                    </div>
+            <div class="container">
+                <h2>Mis proyectos implementados</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-img">👨‍💻</div>
+                        <div class="project-info">
+                            <h3>Desarrollo de Sistema Web</h3>
+                            <p>
+                                Aplicación web con drag & drop, almacenamiento local y modo
+                                oscuro. UI minimalista con microinteracciones.
+                            </p>
+                            <div>
+                                <span class="tech-badge">JavaScript </span>
+                                <span class="tech-badge">Vue.js </span>
+                                <span class="tech-badge">Vuetify</span>
+                                <span class="tech-badge">PocketBase (BaaS)</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-img">📞</div>
+                        <div class="project-info">
+                            <h3>Implementación de Servicio VoIP</h3>
+                            <p>
+                                E-commerce sostenible con sistema de filtros, carrito de
+                                compras y diseño responsive.
+                            </p>
+                            <div>
+                                <span class="tech-badge">Asterisk</span>
+                                <span class="tech-badge">Ubuntu Linux</span>
+                                <span class="tech-badge">VoIP</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-
         </section>
         <section id="contacto">
             <div class="container contact">
                 <h2 class="section-title">Cantactenos</h2>
+                <div class="contacto-info">
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>tuemail@ejemplo.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📍</span>
+                        <div>
+                            <strong>Dirección</strong>
+                            <p>Av Panamericana Villa Bolivar</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-item">
+                        <span class="contacto-icon">📞</span>
+                        <div>
+                            <strong>Respuesta</strong>
+                            <p>Menos de 48 horas</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="contact-form">
                     <form action="#" method="post">
                         <div class="form-group">
                             <label for="nombre">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
                         </div>
                         <div class="form-group">
                             <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" required placeholder="tú@ejemplo.com">
+                            <input type="email" id="email" name="email" required placeholder="tú@ejemplo.com" />
                         </div>
+                        <div class="form-group">
+                            <label for="presupuesto">Presupuesto Estimado</label>
+                            <span class="rango-valor" id="rango-valor"> $1,000 - $5,000 </span>
+
+                            <input type="range" id="presupuesto" name="presupuesto" min="1000" max="5000" step="500"
+                                value="3000"
+                                oninput="document.getElementById('rango-valor').textContent = '$' + this.value" />
+
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Tipo de servicio</label>
+                            <input type="search" id="servicio" name="servicio" list="servicios-list"
+                                placeholder="Busca un servicio..." />
+                            <datalist id="servicios-list">
+                                <option value="Desarrollo Web Full Stack">
+                                <option value="API REST / Back-End">
+                                <option value="Diseño UI / Front-End">
+                                <option value="Base de Datos">
+                                <option value="Consultoría Técnica">
+                            </datalist>
+                        </div>
+
                         <div class="form-group">
                             <label for="mensaje">Mensaje</label>
                             <textarea id="mensaje" name="mensaje" rows="4" required
@@ -104,22 +192,25 @@
                         </div>
                         <button type="submit" class="btn-submit">Enviar mensaje →</button>
                     </form>
-                    <p style="margin-top: 1rem; font-size: 0.8rem; text-align: center; color: var(--text-secondary)">*
-                        Recibirás respuesta en menos de 48h.</p>
+                    <p>* Recibirás respuesta en menos de 48h.</p>
                 </div>
             </div>
-
         </section>
     </main>
     <footer>
-        <div class="container">
-            <p>Sígueme en redes sociales:</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/rodolfo.mamani.9" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/rodolfo_mamani_mamani/" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/in/rodolfo-mamani-mamani-8b1b4b1b6/" target="_blank">LinkedIn</a>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <span class="logo"> Rodolfo Mamani </span>
+                <p>Desarrollador Full Stack - La Paz Bolivia</p>
             </div>
-            <p>&copy; 2024 Mi sitio web todos los derechos reservados.</p>
+            <br>
+            <nav class="social-links">
+                <a href="https://github.com/hebertcussi" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/hebertcussi" target="_blank">LinkedIn</a>
+                <a href="https://www.facebook.com/hebertcussi" target="_blank">Facebook</a>
+            </nav>
+        </div>
+        <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
     </footer>
 </body>
 
