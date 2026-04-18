@@ -32,22 +32,23 @@
                     <span class="person-badge">Disponible para proyectos</span>
                     <h1>Hola, soy <br> <strong>Rodolfo Mamani</strong> </h1>
                     <p>
-                        desarrollador de software con experiencia en backend, frontend y bases de datos. Me apasiona crear soluciones eficientes y escalables para todo tipo de proyectos.
-                        
+                        desarrollador de software con experiencia en backend, frontend y bases de datos. Me apasiona
+                        crear soluciones eficientes y escalables para todo tipo de proyectos.
+
                     </p>
                     <div class="actions">
                         <a href="#servicios" class="btn btn--primary">Ver proyectos</a>
                         <a href="#contacto" class="btn btn--secondary">Contáctame</a>
                     </div>
-                    <aside class="person-img" aria-hidden="true">
-                        <div class="float-card card--a"> React </div>
-                        <div class="float-card card--b"> Node.js </div>
-                        <div class="float-card card--c"> Python </div>
-                        <div class="avatar">
-                            <div class="avatar-interior"> RM </div>
-                        </div>
-                    </aside>
                 </div>
+                <aside class="person-img" aria-hidden="true">
+                    <div class="float-card card--a"> React </div>
+                    <div class="float-card card--b"> Node.js </div>
+                    <div class="float-card card--c"> Python </div>
+                    <div class="avatar">
+                        <div class="avatar-interior"> RM </div>
+                    </div>
+                </aside>
             </div>
         </section>
         <section id="acercade">
@@ -91,38 +92,56 @@
         <section id="servicios">
             <div class="container">
                 <h2>Mis proyectos implementados</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-img">👨‍💻</div>
-                        <div class="project-info">
-                            <h3>Desarrollo de Sistema Web</h3>
-                            <p>
-                                Aplicación web con drag & drop, almacenamiento local y modo
-                                oscuro. UI minimalista con microinteracciones.
-                            </p>
-                            <div>
-                                <span class="tech-badge">JavaScript </span>
-                                <span class="tech-badge">Vue.js </span>
-                                <span class="tech-badge">Vuetify</span>
-                                <span class="tech-badge">PocketBase (BaaS)</span>
-                            </div>
+                <div class="filters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="frontend">Frontend</button>
+                    <button class="filter-btn" data-category="backend">Backend</button>
+                    <button class="filter-btn" data-category="fullstack">Fullstack</button>
+                </div>
+                <div id="project-count">Proyectos: 5</div>
+                <div class="projects-grid" id="project-grid">
+                    <!-- Proyectos se cargarán dinámicamente aquí -->
+                </div>
+            </div>
+
+        </section>
+
+        <section id="apis" aria-label="Consumo de APIs públicas">
+            <div class="container">
+                <header class="section-header">
+                    <h2>APIs Públicas en Vivo</h2>
+                    <p>Ejemplos reales de Fetch API, <code>async/await</code> y <code>Promise.all</code>.</p>
+                </header>
+
+                <div class="apis-grid">
+
+                    <!-- ✅ Sesión 4: PokeAPI – 6 peticiones en paralelo con Promise.all -->
+                    <div class="api-panel" id="poke-section">
+                        <div class="api-panel__header">
+                            <span class="api-badge">PokeAPI</span>
+                            <h3>Pokémon con <code>Promise.all()</code></h3>
+                            <p>Carga 6 Pokémon <strong>en paralelo</strong>. Cada tarjeta es una promesa
+                                independiente.</p>
                         </div>
-                    </article>
-                    <article class="project-card">
-                        <div class="project-img">📞</div>
-                        <div class="project-info">
-                            <h3>Implementación de Servicio VoIP</h3>
-                            <p>
-                                E-commerce sostenible con sistema de filtros, carrito de
-                                compras y diseño responsive.
-                            </p>
-                            <div>
-                                <span class="tech-badge">Asterisk</span>
-                                <span class="tech-badge">Ubuntu Linux</span>
-                                <span class="tech-badge">VoIP</span>
-                            </div>
+                        <div id="poke-grid" class="poke-grid"></div>
+                        <button id="poke-next" class="btn btn--outline btn--sm">Cargar siguientes →</button>
+                    </div>
+
+                    <!-- ✅ Sesión 4: REST Countries – Fetch GET + destructuring de respuesta -->
+                    <div class="api-panel">
+                        <div class="api-panel__header">
+                            <span class="api-badge">REST Countries</span>
+                            <h3>Buscar país</h3>
+                            <p>Fetch GET con <strong>async/await</strong> y <strong>destructuring</strong> del
+                                objeto JSON.</p>
                         </div>
-                    </article>
+                        <div class="country-search-box">
+                            <input type="search" id="country-search" placeholder="Escribe un país… ej: Bolivia"
+                                aria-label="Buscar país" />
+                        </div>
+                        <div id="country-result" class="country-result"></div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -213,6 +232,9 @@
         </div>
         <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="js/app.js"></script>
+
 </body>
 
 </html>
