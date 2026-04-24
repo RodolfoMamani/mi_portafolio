@@ -51,7 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Usuarios: 'Usuarios'
+  Usuario: 'Usuario',
+  Proyecto: 'Proyecto',
+  Tarea: 'Tarea'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -70,7 +72,7 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const UsuariosScalarFieldEnum = {
+export const UsuarioScalarFieldEnum = {
   id: 'id',
   nombre: 'nombre',
   email: 'email',
@@ -78,7 +80,31 @@ export const UsuariosScalarFieldEnum = {
   creadoEn: 'creadoEn'
 } as const
 
-export type UsuariosScalarFieldEnum = (typeof UsuariosScalarFieldEnum)[keyof typeof UsuariosScalarFieldEnum]
+export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum]
+
+
+export const ProyectoScalarFieldEnum = {
+  id: 'id',
+  nombre: 'nombre',
+  descripcion: 'descripcion',
+  creadoEn: 'creadoEn',
+  usuarioId: 'usuarioId'
+} as const
+
+export type ProyectoScalarFieldEnum = (typeof ProyectoScalarFieldEnum)[keyof typeof ProyectoScalarFieldEnum]
+
+
+export const TareaScalarFieldEnum = {
+  id: 'id',
+  titulo: 'titulo',
+  descripcion: 'descripcion',
+  estado: 'estado',
+  creadoEn: 'creadoEn',
+  proyectoId: 'proyectoId',
+  usuarioId: 'usuarioId'
+} as const
+
+export type TareaScalarFieldEnum = (typeof TareaScalarFieldEnum)[keyof typeof TareaScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -95,4 +121,12 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

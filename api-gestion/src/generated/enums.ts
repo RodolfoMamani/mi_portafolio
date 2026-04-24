@@ -9,7 +9,10 @@
 * 🟢 You can import this file directly.
 */
 
+export const Estado = {
+  PENDIENTE: 'PENDIENTE',
+  EN_PROGRESO: 'EN_PROGRESO',
+  COMPLETADA: 'COMPLETADA'
+} as const
 
-
-// This file is empty because there are no enums in the schema.
-export {}
+export type Estado = (typeof Estado)[keyof typeof Estado]
