@@ -90,7 +90,7 @@ router.post('/proyectos', controllerProyecto.createProyecto);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/CrearProyecto'
+ *             $ref: '#/components/schemas/ActualizarProyecto'
  *     responses:
  *       200:
  *         description: Proyecto actualizado

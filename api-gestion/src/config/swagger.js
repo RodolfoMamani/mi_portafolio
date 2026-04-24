@@ -43,6 +43,64 @@ const options = {
             password: { type: 'string', example: 'Seguro123!' },
           },
         },
+        Proyecto: {
+          type: 'object',
+          properties: {
+            id: { type: 'integer', example: 1 },
+            nombre: { type: 'string', example: 'Proyecto Alpha' },
+            descripcion: { type: 'string', example: 'Descripción del proyecto' },
+            usuarioId: { type: 'integer', example: 1 },
+            createAt: { type: 'string', format: 'date-time' },
+          },
+        },
+        CrearProyecto: {
+          type: 'object',
+          required: ['nombre', 'usuarioId'],
+          properties: {
+            nombre: { type: 'string', example: 'Proyecto Alpha' },
+            descripcion: { type: 'string', example: 'Descripción del proyecto' },
+            usuarioId: { type: 'integer', example: 1 },
+          }
+        },
+        ActualizarProyecto: {
+          type: 'object',
+          properties: {
+            nombre: { type: 'string', example: 'Proyecto Alpha' },
+            descripcion: { type: 'string', example: 'Descripción del proyecto' },
+            usuarioId: { type: 'integer', example: 1 },
+          }
+        },
+        Tarea: {
+          type: 'object',
+          properties: {
+            id: { type: 'integer', example: 1 },
+            titulo: { type: 'string', example: 'Tarea 1' },
+            descripcion: { type: 'string', example: 'Descripción de la tarea' },
+            estado: { type: 'string', enum: ['PENDIENTE', 'EN_PROGRESO', 'COMPLETADA'], example: 'PENDIENTE' },
+            proyectoId: { type: 'integer', example: 1 },
+            usuarioId: { type: 'integer', example: 1 },
+            createAt: { type: 'string', format: 'date-time' },
+          },
+        },
+        CrearTarea: {
+          type: 'object',
+          required: ['titulo', 'proyectoId'],
+          properties: {
+            titulo: { type: 'string', example: 'Diseño de la interfaz' },
+            descripcion: { type: 'string', example: 'Crear los diseños para la nueva funcionalidad' },
+            proyectoId: { type: 'integer', example: 1 },
+            usuarioId: { type: 'integer', example: 1 , nullable: true },
+          }
+        },
+        ActualizarTarea: {
+          type: 'object',
+          properties: {
+            titulo: { type: 'string', example: 'Diseño de la interfaz' },
+            descripcion: { type: 'string', example: 'Crear los diseños para la nueva funcionalidad' },
+            proyectoId: { type: 'integer', example: 1 },
+            usuarioId: { type: 'integer', example: 1 , nullable: true },
+          }
+        }
 
       }
     },

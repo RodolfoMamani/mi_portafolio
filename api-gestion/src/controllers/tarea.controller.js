@@ -2,9 +2,10 @@ const prisma = require('../config/prisma');
 
 const getTareas = async (req, res, next) => {
     try {
+        const { proyectoId, estado } = req.query;
         const tarea = await prisma.tarea.findMany({
             where: {
-                ...createTarea(proectoId && { proyectoId: Number(proyectoId) }),
+                ...(proyectoId && { proyectoId: Number(proyectoId) }),
                 ...(estado && { estado }),
             },
             include: {
@@ -70,7 +71,7 @@ const updateTarea = async (req, res, next) => {
             return res.status(400).json({ message: 'No se proporcionaron campos para actualizar' });
         }
         const updatedTarea = await prisma.tarea.update({
-            where: { id: parseInt(id) },
+            where: { id: Number(req.params.id) },
             data
         });
         if (!updatedTarea) {

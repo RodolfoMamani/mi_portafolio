@@ -5,6 +5,10 @@ const { swaggerSpec, swaggerUi}= require('./config/swagger')
  
 const usuarioRoutes = require('./routes/usuario.routes');
 
+const proyectoRoutes = require('./routes/proyecto.routes');
+
+const tareaRoutes = require('./routes/tarea.routes');
+
 
 const app = express();
 const PORT = process.env.PORT || 3010;
@@ -18,6 +22,8 @@ app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use('/api', usuarioRoutes);
+app.use('/api', proyectoRoutes);
+app.use('/api', tareaRoutes);
 
 
 app.listen(PORT, () => {

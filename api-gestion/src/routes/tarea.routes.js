@@ -31,7 +31,7 @@ const controllerTarea = require('../controllers/tarea.controller');
  *                 $ref: '#/components/schemas/Tarea'
  */
 
-router.get('/tareas', controllerTarea.getTareas);
+routes.get('/tareas', controllerTarea.getTareas);
 
 /**
  * @swagger
@@ -56,7 +56,7 @@ router.get('/tareas', controllerTarea.getTareas);
  *         description: Tarea no encontrada
  */
 
-router.get('/tareas/:id', controllerTarea.getTareaById);
+routes.get('/tareas/:id', controllerTarea.getTareaById);
 
 /**
  * @swagger
@@ -69,7 +69,7 @@ router.get('/tareas/:id', controllerTarea.getTareaById);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Tarea'
+ *             $ref: '#/components/schemas/CrearTarea'
  *     responses:
  *       201:
  *         description: Tarea creada exitosamente
@@ -81,7 +81,7 @@ router.get('/tareas/:id', controllerTarea.getTareaById);
  *         description: Error de validación
  */
 
-router.post('/tareas', controllerTarea.createTarea);    
+routes.post('/tareas', controllerTarea.createTarea);
 
 
 /**
@@ -101,7 +101,7 @@ router.post('/tareas', controllerTarea.createTarea);
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Tarea'
+ *             $ref: '#/components/schemas/ActualizarTarea'
  *     responses:
  *       200:
  *         description: Tarea actualizada exitosamente
@@ -114,7 +114,7 @@ router.post('/tareas', controllerTarea.createTarea);
  */
 
 
-router.patch('/tareas/:id', controllerTarea.updateTarea);
+routes.patch('/tareas/:id', controllerTarea.updateTarea);
 
 /**
  * @swagger
@@ -136,7 +136,7 @@ router.patch('/tareas/:id', controllerTarea.updateTarea);
  */
 
 
-router.delete('/tareas/:id', controllerTarea.deleteTarea);
+routes.delete('/tareas/:id', controllerTarea.deleteTarea);
 
 
-exports.routes = routes;
+module.exports = routes;
