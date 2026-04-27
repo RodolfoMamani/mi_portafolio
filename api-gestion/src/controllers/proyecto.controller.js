@@ -2,8 +2,12 @@ const prisma = require('../config/prisma');
 
 const getProyectos = async (req, res, next) => {
     try {
+        const includeTareas = req.query.include === 'tareas';
         const proyecto = await prisma.proyecto.findMany({
-            include: { usuario: { select: { nombre: true } } }
+            include: { 
+                usuario: { select: { nombre: true } },
+                tareas: includeTareas
+            }
         });
         res.json(proyecto);
     } catch (error) {

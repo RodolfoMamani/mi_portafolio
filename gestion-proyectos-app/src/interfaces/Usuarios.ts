@@ -1,8 +1,10 @@
 export interface Usuario {
+  // creadoEn: string | number | Date;
   id: number;
   nombre: string;
   email: string;
-  createAt: string;
+  creadoEn: string;
+  
 }
 
 export interface CrearUsuarioDTO {
@@ -15,3 +17,5 @@ export interface ActualizarUsuarioDTO {
   nombre?: string;
   email?: string;
 }
+
+

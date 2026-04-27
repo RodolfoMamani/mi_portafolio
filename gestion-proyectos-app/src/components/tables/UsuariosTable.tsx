@@ -32,7 +32,7 @@ export default function UsuariosTable({ usuarios, loading, onEditar, onEliminar 
               <td className="px-5 py-3 text-slate-400">{u.id}</td>
               <td className="px-5 py-3 font-medium text-slate-800">{u.nombre}</td>
               <td className="px-5 py-3 text-slate-600">{u.email}</td>
-              <td className="px-5 py-3 text-slate-400">{new Date(u.createAt).toLocaleDateString('es-BO')}</td>
+              <td className="px-5 py-3 text-slate-400">{new Date(u.creadoEn).toLocaleDateString('es-BO')}</td>
               <td className="px-5 py-3">
                 <div className="flex gap-2">
                   <Button variant="ghost" onClick={() => onEditar(u)} icon={<Pencil size={14} />}>

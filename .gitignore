@@ -1,3 +1,6 @@
 /api-gestion/node_modules/
 /api-gestion/.env
-/gestion-proyectos-app/
+/gestion-proyectos-app/node_modules/
+/gestion-proyectos-app/.env
+
+/node_modules/

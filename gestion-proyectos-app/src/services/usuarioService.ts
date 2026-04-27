@@ -26,3 +26,4 @@ export const usuarioService = {
     await axiosInstance.delete(`/usuarios/${id}`);
   },
 }
+
