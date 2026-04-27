@@ -1,7 +1,7 @@
 import { useProyectos } from "../hooks/useProyectos";
 import { useTareas } from "../hooks/useTareas";
 import { useUsuarios } from "../hooks/useUsuarios";
-import { FolderKanban, CheckSquare, TrendingUp, Clock, Users, Activity, Calendar, AlertTriangle } from "lucide-react";
+import { FolderKanban, CheckSquare, Clock, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function HomePage() {
