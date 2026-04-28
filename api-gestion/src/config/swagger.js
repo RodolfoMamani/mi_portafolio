@@ -21,24 +21,29 @@ const options = {
           type: 'object',
           properties: {
             id: { type: 'integer', example: 1 },
-            nombre: { type: 'string', example: 'Rodolfo Mamani' },
+            nombre: { type: 'string', example: 'Rodolfo' },
+            apellidos: { type: 'string', example: 'Gómez' },
             email: { type: 'string', example: 'rodo@example.com' },
             createAt: { type: 'string', format: 'date-time' }
           },
         },
+        // Request body for crearUsuario incluye apellidos
         crearUsuario: {
           type: 'object',
-          required: ['nombre', 'email', 'password'],
+          required: ['nombre', 'apellidos', 'email', 'password'],
           properties: {
-            nombre: { type: 'string', example: 'Rodolfo Mamani' },
+            nombre: { type: 'string', example: 'Rodolfo' },
+            apellidos: { type: 'string', example: 'Gómez' },
             email: { type: 'string', example: 'rodo@example.com' },
             password: { type: 'string', example: 'Seguro123!' },
           },
         },
+        // Request body for actualizarUsuario incluye apellidos opcional
         actualizarUsuario: {
           type: 'object',
           properties: {
-            nombre: { type: 'string', example: 'Rodolfo Mamani' },
+            nombre: { type: 'string', example: 'Rodolfo' },
+            apellidos: { type: 'string', example: 'Gómez' },
             email: { type: 'string', example: 'rodo@example.com' },
             password: { type: 'string', example: 'Seguro123!' },
           },

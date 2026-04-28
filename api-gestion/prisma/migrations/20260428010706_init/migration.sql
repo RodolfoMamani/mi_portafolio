@@ -1,15 +1,16 @@
-/*
-  Warnings:
-
-  - You are about to drop the column `createAt` on the `usuarios` table. All the data in the column will be lost.
-
-*/
 -- CreateEnum
 CREATE TYPE "Estado" AS ENUM ('PENDIENTE', 'EN_PROGRESO', 'COMPLETADA');
 
--- AlterTable
-ALTER TABLE "usuarios" DROP COLUMN "createAt",
-ADD COLUMN     "creadoEn" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
+-- CreateTable
+CREATE TABLE "usuarios" (
+    "id" SERIAL NOT NULL,
+    "nombre" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "creadoEn" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "usuarios_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "proyectos" (
@@ -34,6 +35,9 @@ CREATE TABLE "tareas" (
 
     CONSTRAINT "tareas_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "usuarios_email_key" ON "usuarios"("email");
 
 -- AddForeignKey
 ALTER TABLE "proyectos" ADD CONSTRAINT "proyectos_usuarioId_fkey" FOREIGN KEY ("usuarioId") REFERENCES "usuarios"("id") ON DELETE CASCADE ON UPDATE CASCADE;

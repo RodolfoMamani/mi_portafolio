@@ -1,11 +1,14 @@
 const prisma = require('../config/prisma');
 
+
 const getUsuarios = async (req, res, next) => {
   try {
     const usuario = await prisma.usuario.findMany({
       select: {
         id: true,
         nombre: true,
+        /* apellidos */
+        apellidos: true,
         email: true,
         creadoEn: true
       }
@@ -16,12 +19,14 @@ const getUsuarios = async (req, res, next) => {
   }
 }
 
+
 const getUsuarioById = async (req, res, next) => {
   try {
     const { id } = req.params;
     const usuario = await prisma.usuario.findUnique({
       where: { id: parseInt(id) },
-      select: { id: true, nombre: true, email: true, creadoEn: true },
+      /* apellidos */
+      select: { id: true, nombre: true, apellidos: true, email: true, creadoEn: true },
     });
     if (!usuario) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
@@ -32,9 +37,11 @@ const getUsuarioById = async (req, res, next) => {
   }
 };
 
+
 const createUsuario = async (req, res, next) => {
   try {
-    const { nombre, email, password } = req.body;
+    /* apellidos */
+    const { nombre, apellidos, email, password } = req.body;
     const existingUsuario = await prisma.usuario.findUnique({
       where: { email },
     });
@@ -44,8 +51,9 @@ const createUsuario = async (req, res, next) => {
     }
 
     const newUsuario = await prisma.usuario.create({
-      data: { nombre, email, password },
-      select: { id: true, nombre: true, email: true, creadoEn: true },
+      //Incluie apellidos 
+      data: { nombre, apellidos, email, password },
+      select: { id: true, nombre: true, apellidos: true, email: true, creadoEn: true },
     });
 
     res.status(201).json(newUsuario);
@@ -55,14 +63,17 @@ const createUsuario = async (req, res, next) => {
 };
 
 
+
 const updateUsuario = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { nombre, email, password } = req.body;
+    /* apellidos */
+    const { nombre, apellidos, email, password } = req.body;
     const data = {};
 
     if (nombre !== undefined) data.nombre = nombre;
     if (email !== undefined) data.email = email;
+    if (apellidos !== undefined) data.apellidos = apellidos; // <-- allow updating apellidos
     if (password !== undefined) data.password = password;
 
     if (Object.keys(data).length === 0) {
@@ -71,7 +82,8 @@ const updateUsuario = async (req, res, next) => {
     const updatedUsuario = await prisma.usuario.update({
       where: { id: parseInt(id) },
       data,
-      select: { id: true, nombre: true, email: true, creadoEn: true },
+      /*  apellidos  */
+      select: { id: true, nombre: true, apellidos: true, email: true, creadoEn: true },
     }).catch((e) => {
       if (e.code === 'P2025') return null;
       throw e;
